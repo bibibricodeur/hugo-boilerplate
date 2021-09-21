@@ -1,0 +1,77 @@
+html {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-size: 2.5rem !important;
+    /*line-height: 1.2;*/
+}
+
+h2 {
+    font-size: 2rem !important;
+    line-height: 1.25;
+}
+
+h3 {
+    font-size: 1.75rem !important;
+    line-height: 1.3;
+}
+
+h4 {
+    font-size: 1.5rem !important;
+    line-height: 1.35;
+}
+
+h5 {
+    font-size: 1.25rem !important;
+    line-height: 1.5;
+}
+
+h6 {
+    font-size: 1rem !important;
+    line-height: 1.6;
+}
+
+.nav-wrapper {
+  text-shadow: 3px 3px 6px #3a3a3a;
+}
+
+.contenu {
+    min-height: 100vh;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+img, embed, object, video {
+    max-width: 100%;
+}
+
+article.card img {
+    padding-top: 2.1em;
+    padding-bottom: 1.8em;
+}
+.card-image-goeland {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+pre, code {
+    white-space: pre-wrap;
+    padding: 0.9em;
+}
+
+#boutonRemonter {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 10px;
+    z-index: 99;
+}
+#boutonRemonter:hover {
+    transition-duration: 0.7s;
+    opacity: 0.3;
+}
+
+/* Fin */

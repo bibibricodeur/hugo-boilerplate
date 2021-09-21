@@ -1,0 +1,36 @@
+{{ define "main" }}
+<main>
+
+    {{ range .Paginator.Pages.ByDate.Reverse }}
+
+    <!-- Blog Post -->
+    <article class="card">
+      <div class="card-content">
+        <span class="card-title"><a href='{{ .RelPermalink }}'>{{ .Title }}</a></span>
+        {{ .Summary }}
+      </div><!--/card-content-->
+      <div class="card-action">
+        {{ if .Truncated }}
+        <p>
+            <a href="{{ .RelPermalink }}" class="btn-small">En savoir plus &rarr;</a>
+        </p>
+        {{ end }}
+        Posté le: {{ .Date.Format "02.01.2006 15:04" }}
+        {{ if .Params.tags }}
+        <p>
+          <strong>Etiquette(s):</strong>
+          {{ range .Params.tags }}
+          <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+          {{ end }}
+        </p>
+        {{ end }}
+      </div><!--/card-action-->
+    </article><!--/card-->
+    <!-- /Blog Post -->
+
+    {{ end }}
+
+    {{ template "_internal/pagination.html" . }}
+
+</main>
+{{ end }}

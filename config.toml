@@ -1,0 +1,55 @@
+# # #
+# https://gohugo.io
+# https://gohugo.io/getting-started/configuration
+# https://www.mikedane.com/static-site-generators/hugo/
+# # #
+
+baseURL = "http://dev.localhost/SynologyDrive/ParPublic/Hugo/hugo-boilerplate/public/"
+languageCode    = "fr-FR"
+
+#baseURL         = ""
+footnoteReturnLinkContents = "↩"
+title           = "hugo-boilerplate"
+
+theme           = "hugo-boilerplate-theme"
+contentdir      = "content"
+publishdir      = "public"
+paginate        = 3
+enableRobotsTXT = true
+
+googleAnalytics = "UA-XXXXXXXXX-X"
+
+[params]
+  AuthorName    = "bibibricodeur"
+  GitHubUser    = "bibibricodeur"
+  #SidebarRecentLimit = 3
+  #Subtitle      = ""
+
+  # metas
+  author        = "bibibricodeur"
+  description   = ""
+  # ajouter apropos
+  adresse       = "17160 Matha"
+  courriel      = "bibibricodeur(signe bizarre)gmail.com"
+  hebergement   = "https://localhost"
+  hebergeur     = "bibibricodeur"
+  proprietaire  = "bibibricodeur"
+  statut        = "particulier"
+  telephone     = "+33 123345678"
+
+[permalinks]
+  posts         = "/:year/:month/:title/"
+
+[menu]
+  [[menu.main]]
+    identifier  = "mentions"
+    name        = "Mentions légales"
+    pre         = ""
+    url         = "mentions"
+    weight      = 1
+
+[taxonomies]
+  tag           = "tags"
+  category      = "categories"
+
+### Fin

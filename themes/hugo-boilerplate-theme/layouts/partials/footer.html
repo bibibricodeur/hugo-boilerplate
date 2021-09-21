@@ -1,0 +1,41 @@
+<footer class="page-footer cyan darken-3">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Citation(s)</h5>
+        <ul>
+          {{ range .Site.Data.citations }}
+          <li>{{ .citation }}&nbsp;<a class="orange-text text-dark-3" href="{{ .url }}">&nbsp;{{ .name }}</a></li><br>
+          {{ end }}
+        </ul>
+      </div><!--/col l3 s12-->
+
+      <div class="col l3 s12">
+
+      </div><!--/col l3 s12-->
+
+      <div class="col l3 s12">
+        <h5 class="white-text">Lien(s) externe(s)</h5>
+        <ul>
+          {{ range .Site.Data.liens }}
+          <li><a class="white-text" href="{{ .url }}">{{ .name }}</a></li>
+          {{ end }}
+        </ul>
+      </div><!--/col l3 s12-->
+
+    </div><!--/row-->
+  </div><!--/container-->
+
+  <div class="footer-copyright">
+    <div class="container">
+      Propulsé par <a class="orange-text text-dark-3" href="https://gohugo.io/">Hugo</a> et <a href="{{ .Site.Params.hebergement }}">
+        {{ with .Site.Params.hebergeur }}{{.}}
+        {{ end }}
+      </a>, carrossé par <a class="orange-text text-dark-3" href="http://materializecss.com">Materialize</a> et toujours <a href="{{ .Site.Params.hebergement }}">
+        {{ with .Site.Params.hebergeur }}{{.}}
+        {{ end }}
+      </a> &copy; {{ now.Year }}
+    </div><!--/container-->
+  </div><!--/footer-copyright-->
+
+</footer>

@@ -1,0 +1,30 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on hugo-boilerplate</title>
+    <link>http://dev.localhost/SynologyDrive/ParPublic/Hugo/hugo-boilerplate/public/categories/</link>
+    <description>Recent content in Categories on hugo-boilerplate</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    <lastBuildDate>Thu, 26 Dec 2019 15:03:15 +0300</lastBuildDate>
+    <atom:link href="/SynologyDrive/ParPublic/Hugo/hugo-boilerplate/public/categories/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Divers 002</title>
+      <link>http://dev.localhost/SynologyDrive/ParPublic/Hugo/hugo-boilerplate/public/categories/divers-002/</link>
+      <pubDate>Thu, 26 Dec 2019 15:03:15 +0300</pubDate>
+      
+      <guid>http://dev.localhost/SynologyDrive/ParPublic/Hugo/hugo-boilerplate/public/categories/divers-002/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Divers 001</title>
+      <link>http://dev.localhost/SynologyDrive/ParPublic/Hugo/hugo-boilerplate/public/categories/divers-001/</link>
+      <pubDate>Mon, 23 Dec 2019 15:03:15 +0300</pubDate>
+      
+      <guid>http://dev.localhost/SynologyDrive/ParPublic/Hugo/hugo-boilerplate/public/categories/divers-001/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

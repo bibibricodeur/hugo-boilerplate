@@ -1,0 +1,25 @@
+{{ define "main" }}
+<main>
+
+  <!-- Blog Post -->
+  <article class="card">
+    <div class="card-content">
+      <span class="card-title">{{ .Title }}</span>
+      {{ .Content }}
+    </div><!--/card-content-->
+    <div class="card-action">
+      Posté le: {{ .Date.Format "02.01.2006 15:04" }}
+      {{ if .Params.tags }}
+      <p>
+        <strong>Etiquette(s):</strong>
+        {{ range .Params.tags }}
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+        {{ end }}
+      </p>
+      {{ end }}
+    </div><!--/card-action-->
+  </article><!--/card-->
+  <!-- /Blog Post -->
+
+</main>
+{{ end }}

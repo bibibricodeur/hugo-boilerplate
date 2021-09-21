@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+  {{ template "_internal/google_analytics.html" . }}
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {{ if .IsPage }}
+  <meta name="description" content="{{ .Description | default (substr .Summary 0 160) }}"/>
+  {{ else }}
+  <meta name="description" content="{{ .Site.Params.description }}">
+  {{ end }}
+  <meta name="author" content="{{ .Site.Params.author }}">
+  <link rel="shortcut icon" href="{{ "favicon.ico" | relURL}} ">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{{ "node_modules/materialize-css/dist/css/materialize.min.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+
+  {{ range .AlternativeOutputFormats -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+
+  <!-- Blocks may include default content. -->
+  <title>{{ .Title }} | {{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+  <style>
+
+  </style>
+</head>
+
+<body id="hautPage">
+
+  {{ partial "navigation" . }}
+
+  <!-- Page Content -->
+  <div class="container contenu">
+    <div class="section">
+      <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col s12 m9 l9">
+
+          <!-- Code that all your templates share, like a header -->
+          {{ block "main" . }}
+          <!-- The part of the page that begins to differ between templates -->
+          {{ end }}
+
+        </div><!--/col s12 m9 l9-->
+
+        {{ partial "sidebar" . }}
+
+      </div><!--/row -->
+    </div><!--/section-->
+  </div><!--/container -->
+
+  {{ partial "footer" . }}
+
+  <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
+
+  <a href="#hautPage" class="btn btn-secondary" id="boutonRemonter"
+  title="Clic pour remonter en haut de cette satanée page">Remonter</a>
+  
+  <script src="{{ "/node_modules/jquery/dist/jquery.min.js" | relURL }}"></script>
+  <script src="{{ "/node_modules/materialize-css/dist/js/materialize.min.js" | relURL }}"></script>
+  <script src="{{ "/js/scripts.js" | relURL }}"></script>
+  <script src="{{ "/js/meteo.ch/meteo.ch.js" | relURL }}"></script>
+  <script>
+  // https://developer.mozilla.org/fr/docs/Web/API/GlobalEventHandlers/onscroll
+  window.onscroll = function () {
+    afficherBouton()
+  };
+
+  function afficherBouton() {
+    //console.log('afficher ou cacher bouton remonter');
+    // https://developer.mozilla.org/fr/docs/Web/API/Document/getElementById
+    var elem = document.getElementById('boutonRemonter');
+    var nombrePixels = window.pageYOffset | document.body.scrollTop;
+    // console.log('descendu de ' + nombrePixels + 'pixels');
+    if (nombrePixels > 360) {
+      elem.style.display = 'block';
+    } else if (nombrePixels <= 360) {
+      elem.style.display = 'none';
+    }
+  }
+  </script>
+</body>
+
+</html>
